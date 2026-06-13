@@ -41,19 +41,19 @@
     </div>
 
     <!-- Right Panel: Auth Pages Slot Container -->
-    <div class="flex-1 flex flex-col justify-center items-center p-6 md:p-12 lg:p-16">
+    <div class="flex-1 flex flex-col justify-center items-center p-4 sm:p-8 md:p-12 lg:p-16">
       <!-- Small Header for Mobile Only -->
-      <div class="flex md:hidden items-center gap-2 mb-8">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="w-8 h-8 text-brand-teal">
+      <div class="flex md:hidden items-center gap-2 mb-6">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="w-6 h-6 text-brand-teal">
           <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
           <path d="M12 6v11a4 4 0 0 1-4-4" />
           <circle cx="12" cy="12" r="3" class="fill-brand-teal/20" />
         </svg>
-        <span class="font-dm-sans font-semibold text-2xl text-midnight-ink tracking-tight">Dulurku</span>
+        <span class="font-dm-sans font-semibold text-xl text-midnight-ink tracking-tight">Dulurku</span>
       </div>
 
       <!-- Slide Transition Container for Auth Pages -->
-      <div class="w-full max-w-md bg-white border border-mist rounded-[24px] p-8 md:p-10 shadow-subtle">
+      <div class="w-full max-w-[420px] bg-white border border-mist rounded-[24px] p-6 sm:p-8 md:p-10 shadow-subtle">
         <router-view v-slot="{ Component }">
           <transition name="fade" mode="out-in">
             <component :is="Component" />

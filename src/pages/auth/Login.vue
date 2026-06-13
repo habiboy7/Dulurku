@@ -1,17 +1,17 @@
 <template>
   <div>
     <!-- Header -->
-    <div class="mb-8">
-      <h2 class="font-dm-sans text-3xl font-semibold text-midnight-ink tracking-tight mb-2">
+    <div class="mb-6">
+      <h2 class="font-dm-sans text-2xl sm:text-3xl font-semibold text-midnight-ink tracking-tight mb-1.5">
         Selamat Datang
       </h2>
-      <p class="font-inter text-sm text-zinc-500">
+      <p class="font-inter text-xs sm:text-sm text-zinc-500 leading-relaxed">
         Masuk ke akun Dulurku Anda untuk mengelola silsilah keluarga.
       </p>
     </div>
 
     <!-- Alert Error -->
-    <div v-if="errorMsg" class="mb-6 p-4 bg-red-50 border border-red-100 rounded-xl flex items-start gap-3">
+    <div v-if="errorMsg" class="mb-5 p-4 bg-red-50 border border-red-100 rounded-xl flex items-start gap-3">
       <span class="text-red-500 font-semibold text-sm">❌</span>
       <p class="font-inter text-xs text-red-600 font-medium leading-relaxed">
         {{ errorMsg }}
@@ -19,9 +19,9 @@
     </div>
 
     <!-- Form -->
-    <form @submit.prevent="handleLogin" class="space-y-5">
+    <form @submit.prevent="handleLogin" class="space-y-4">
       <div>
-        <label for="email" class="block font-inter text-xs font-semibold text-midnight-ink mb-2">
+        <label for="email" class="block font-inter text-xs font-semibold text-midnight-ink mb-1.5">
           Alamat Email
         </label>
         <input 
@@ -30,18 +30,18 @@
           v-model="email" 
           required 
           placeholder="nama@email.com"
-          class="w-full bg-white border border-mist rounded-xl px-4 py-3 text-sm text-midnight-ink placeholder-fog-gray focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-all duration-200"
+          class="w-full bg-white border border-mist rounded-xl px-4 py-2.5 sm:py-3 text-sm text-midnight-ink placeholder-fog-gray focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-all duration-200"
         />
       </div>
 
       <div>
-        <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center justify-between mb-1.5">
           <label for="password" class="block font-inter text-xs font-semibold text-midnight-ink">
             Kata Sandi
           </label>
           <router-link 
             :to="{ name: 'forgot-password' }" 
-            class="font-inter text-xs font-medium text-brand-teal hover:underline"
+            class="font-inter text-[11px] sm:text-xs font-semibold text-brand-teal hover:underline"
           >
             Lupa kata sandi?
           </router-link>
@@ -52,7 +52,7 @@
           v-model="password" 
           required 
           placeholder="••••••••"
-          class="w-full bg-white border border-mist rounded-xl px-4 py-3 text-sm text-midnight-ink placeholder-fog-gray focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-all duration-200"
+          class="w-full bg-white border border-mist rounded-xl px-4 py-2.5 sm:py-3 text-sm text-midnight-ink placeholder-fog-gray focus:outline-none focus:ring-2 focus:ring-brand-teal focus:border-transparent transition-all duration-200"
         />
       </div>
 
@@ -60,7 +60,7 @@
       <button 
         type="submit" 
         :disabled="loading"
-        class="w-full bg-brand-teal text-white font-inter text-sm font-semibold py-3.5 px-4 rounded-2xl hover:brightness-105 active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
+        class="w-full bg-brand-teal text-white font-inter text-sm font-semibold py-3 sm:py-3.5 px-4 rounded-2xl hover:brightness-105 active:scale-[0.99] transition-all duration-200 flex items-center justify-center gap-2 cursor-pointer disabled:opacity-75 disabled:cursor-not-allowed"
       >
         <svg v-if="loading" class="animate-spin h-5 w-5 text-white" fill="none" viewBox="0 0 24 24">
           <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
@@ -71,7 +71,7 @@
     </form>
 
     <!-- Footer Links -->
-    <div class="mt-8 pt-6 border-t border-mist/50 text-center">
+    <div class="mt-6 pt-5 border-t border-mist/50 text-center">
       <p class="font-inter text-xs text-zinc-500">
         Belum memiliki akun? 
         <router-link 
